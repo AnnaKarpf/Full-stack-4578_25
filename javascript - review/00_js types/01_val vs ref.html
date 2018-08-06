@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        //---------------------VAL TYPE-----------------------
+        
+        var num1 = 3;  //num1 contains 3
+        var num2 = num1;  //num2 gets 3 (the copy of the content num1)
+
+        console.log(`num1: ${num1}, num2: ${num2}`);   //--> num1: 3, num2: 3
+        
+        
+        num2=6;
+
+        console.log(`num1: ${num1}, num2: ${num2}`);  //--> num1: 3, num2: 6
+
+
+        //-----------------------REF TYPE----------------------
+        
+        var arr1 = [2,3,4];  //arr1 contains a ref to an array [2,3,4] that is in the heap
+        var arr2 = arr1;  //arr2 gets the ref to the same array that arr1 points (the copy of the content arr1)
+
+        console.log(`arr1: ${arr1}, arr2: ${arr2}`);   //--> arr1: 2,3,4, arr2: 2,3,4
+        
+        
+        arr2[0]=6;
+
+        console.log(`arr1: ${arr1}, arr2: ${arr2}`);  //--> arr1: 6,3,4, arr2: 6,3,4
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
