@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        var req = new XMLHttpRequest();
+        req.open("GET", "https://reqres.in/api/users?delay=5");
+
+        req.onreadystatechange = () => {
+            if (req.readyState == 4) {
+                console.log(req.response);
+            }
+        }
+
+        req.send();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
