@@ -4,4 +4,23 @@
 ---
 ## Step 2 - install tsc global (with npm)
 ![picture](step2.png)
+---
+## Step 3 - create a new ts file named `index.ts`, with the following content:
+```typescript
+let num:number=4;
+```
+
+## Step 4 - open command prompt
+*click *right click* on the `index.ts` file
+*choose `open in command prompt`
+---
+## Step 5 - run command to craete js file
+* in the command prompt that we opened in the prev step, write this command:
+```bash
+tsc index.ts
+```
+* this command will create a `index.js` file, with this content:
+```javascript
+var num=4;
+```
 
