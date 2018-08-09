@@ -11,8 +11,8 @@ let num:number=4;
 ```
 
 ## Step 4 - open command prompt
-* click *right click* on the `index.ts` file
-* choose `open in command prompt`
+*click *right click* on the `index.ts` file
+*choose `open in command prompt`
 ---
 ## Step 5 - run command to craete js file
 * in the command prompt that we opened in the prev step, write this command:
@@ -23,4 +23,6 @@ tsc index.ts
 ```javascript
 var num=4;
 ```
+
+
 
