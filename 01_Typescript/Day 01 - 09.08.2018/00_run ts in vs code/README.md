@@ -23,6 +23,22 @@ tsc index.ts
 ```javascript
 var num=4;
 ```
+---
+## Step 6 - transpile all ts files with one command:
+* add to the app folder a new filenamed `tsconfig.json`, with the following content:
+```json
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true
+    }
+}
+```
+* click `control + shift + b` and run:
+***
+![picture](step3.png)
+
 
 
 
