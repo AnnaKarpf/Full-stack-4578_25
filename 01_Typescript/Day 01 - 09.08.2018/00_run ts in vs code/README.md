@@ -11,8 +11,8 @@ let num:number=4;
 ```
 
 ## Step 4 - open command prompt
-*click *right click* on the `index.ts` file
-*choose `open in command prompt`
+* click *right click* on the `index.ts` file
+* choose `open in command prompt`
 ---
 ## Step 5 - run command to craete js file
 * in the command prompt that we opened in the prev step, write this command:
@@ -23,6 +23,22 @@ tsc index.ts
 ```javascript
 var num=4;
 ```
+---
+## Step 6 - transpile all ts files with one command:
+* add to the app folder a new filenamed `tsconfig.json`, with the following content:
+```json
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true
+    }
+}
+```
+* click `control + shift + b` and run:
+***
+![picture](step3.png)
+
 
 
 
