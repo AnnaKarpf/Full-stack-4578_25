@@ -1,0 +1,56 @@
+<!-----------------------*ngFor------------------------->
+<ul>
+    <li *ngFor="let x of ['first','second','third']">
+        {{x}}
+    </li>
+</ul>
+
+<ol>
+    <li *ngFor="let y of namesArray, let i=index">
+        the element content is {{y}}, and the index is: {{i}}
+    </li>
+</ol>
+
+<table border="1">
+    <tr>
+        <th> first name: </th>
+        <th> last name: </th>
+        <th> address: </th>
+    </tr>
+    <tr *ngFor="let outer of studentsArray, let i=index">
+        <td *ngFor="let inner of outer, let j=index">
+            <span title="{{'row: ' + i + ', col: ' +j }}">
+                {{inner}}
+            </span>
+        </td>
+    </tr>
+</table>
+
+
+<ul>
+    <li *ngFor="let z of studentsArray[0]">{{z}}</li>
+</ul>
+
+<!-----------------------*ngIf------------------------->
+
+<p *ngIf="prop1">prop1 {{prop1}} is true </p>
+<p *ngIf="!prop1"> prop1 {{prop1}} is false</p>
+
+<p *ngIf="prop2">prop2 {{prop2}} is true </p>
+<p *ngIf="!prop2"> prop2 {{prop2}} is false</p>
+
+<p *ngIf="prop3">prop3 {{prop3}} is true </p>
+<p *ngIf="!prop3"> prop3 {{prop3}} is false</p>
+
+<p *ngIf="prop4">prop4 {{prop4}} is true </p>
+<p *ngIf="!prop4"> prop4 {{prop4}} is false</p>
+
+<p *ngIf="prop5">prop5 {{prop5}} is true </p>
+<p *ngIf="!prop5"> prop5 {{prop5}} is false</p>
+
+<p *ngIf="prop6">prop6 {{prop6}} is true </p>
+<p *ngIf="!prop6"> prop6 {{prop6}} is false</p>
+
+<h1>today is {{currentDay}}</h1>
+<p *ngIf="currentDay<5">regular day - please go to work</p>
+<p *ngIf="currentDay>=5">rest day - you can sleep</p>
