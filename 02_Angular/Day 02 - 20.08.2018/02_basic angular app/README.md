@@ -1,4 +1,3 @@
-# Proj1
 # Basic angular app
 
 ## Project goals
