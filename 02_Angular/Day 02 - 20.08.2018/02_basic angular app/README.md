@@ -14,4 +14,4 @@ ng serve --open
 ```
 
 ### Get this result:
-![picture]()
+![picture](screenshot.png)
