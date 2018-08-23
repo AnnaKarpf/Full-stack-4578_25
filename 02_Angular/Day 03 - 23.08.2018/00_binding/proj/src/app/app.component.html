@@ -1,0 +1,26 @@
+<!----------------- is one way binding - from ts to html --------------->
+<h1>{{userName}} loves {{title}}</h1>
+
+<img [src]="imgSrc">
+<!---------------------------------------------------------------------->
+
+
+
+
+<!----------------- is one way binding - from html to ts --------------->
+<button (click)="onButtonClick()">change image</button>
+<!---------------------------------------------------------------------->
+
+
+
+<!----------------- two way binding------------------------------------>
+<input [(ngModel)]="userName"/>
+
+<input [value]="userName" (keyup)="onNameChange($event.target.value)"/>
+
+<input [value]="userName" #fname (keyup)="onNameChange(fname.value)"/>
+<!---------------------------------------------------------------------->
+
+
+
+
