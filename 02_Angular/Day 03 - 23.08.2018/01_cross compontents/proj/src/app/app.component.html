@@ -1,0 +1,19 @@
+<input #student/>
+<button (click)="addStudent(student.value)">
+    Add student
+</button>
+<hr/>
+
+
+<ul>
+    <li *ngFor="let x of studentArr, let i = index">
+        <!-- 
+            Here (PARENT) we send to new instance 
+            of class SingleStudentComponent (CHILD)
+            2 parameters 
+        -->
+        <app-single-student [index]="i" [studentName]="x"
+        (onRemove)="removeFromArr($event)">
+        </app-single-student>
+    </li>
+</ul>
