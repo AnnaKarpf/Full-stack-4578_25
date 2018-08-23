@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "app-single-student",
   templateUrl: "./single-student.component.html",
-  styleUrls: ["./single-student.component.css"]
+  styleUrls: []
 })
 export class SingleStudentComponent {
   @Input() studentName: string;
