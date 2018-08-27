@@ -1,0 +1,15 @@
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+    <div class="text-center">
+        <h2>Elies Drink Shop</h2>
+        <h4>Choose a drink from our menu</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-xs-12" *ngFor="let x of drinkArray">
+            <app-drink-tab 
+            [drinkName]="x.name" [drinkImg]="x.img"
+            (addDrink)="passEvent()"
+            ></app-drink-tab>
+        </div>
+    </div>
+</div>
