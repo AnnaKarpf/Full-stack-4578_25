@@ -1,0 +1,19 @@
+<h1>Article list</h1>
+
+
+<table border="1">
+    <tr>
+        <th>article_type</th>
+        <th>author</th>
+        <th>score</th>
+    </tr>
+  <tr *ngFor="let article of localList" (click)="setArticleSelection(article)">
+    <td>{{article.article_type}}</td>
+    <td>
+      <ul *ngFor="let author of article.author_display">
+        <li>{{author}}</li>
+      </ul>
+    </td>
+    <td>{{article.score}}</td>
+  </tr>
+</table>

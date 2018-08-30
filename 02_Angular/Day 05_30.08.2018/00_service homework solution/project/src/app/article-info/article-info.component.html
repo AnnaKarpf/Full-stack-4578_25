@@ -1,0 +1,9 @@
+<div *ngIf="selection.article">
+  <h1>{{selection.article.article_type}}</h1>
+  <h2>author list:</h2>
+  <ul *ngFor="let author of selection.article.author_display">
+    <li>{{author}}</li>
+  </ul>
+
+  <h3>score: {{selection.article.score}}</h3>
+</div>
