@@ -1,0 +1,16 @@
+<div *ngIf="localData && localData.users">
+  <table border="1">
+    <tr>
+      <th>id</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>avatar</th>
+    </tr>
+    <tr *ngFor="let user of localData.users.data">
+      <td>{{user.id}}</td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td><img [src]="user.avatar" /></td>
+    </tr>
+  </table>
+</div>
