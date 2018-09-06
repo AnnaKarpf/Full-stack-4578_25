@@ -1,0 +1,23 @@
+<div id="tour" class="bg-1">
+    <div class="container text-center">
+        <select #land (change)="setCountry(land.value)">
+            <option *ngFor="let x of localInfo.list">
+                {{x.name}}
+            </option>
+        </select>
+
+
+
+
+        <ul class="nav nav-tabs">
+            <li><a routerLink="/router3/countries/flag">Flag</a></li>
+            <li><a routerLink="/router3/countries/nativeName">Native Name</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div>
+               <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
