@@ -1,0 +1,24 @@
+<!-- Header -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li (click)="setComponent('pizza')">
+                    <a href="javascript:void(0)">PIZZA</a>
+                </li>
+                <li (click)="setComponent('bamba')">
+                    <a href="javascript:void(0)">BAMBA</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main -->
+<app-bamba *ngIf="choice=='bamba'"></app-bamba>
+<app-pizza *ngIf="choice=='pizza'"></app-pizza>
+
+<!-- Footer -->
+<footer class="text-center">
+    <p>JB - FullStack</p>
+</footer>
