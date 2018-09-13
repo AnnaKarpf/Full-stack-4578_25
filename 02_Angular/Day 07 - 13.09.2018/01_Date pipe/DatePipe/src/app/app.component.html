@@ -1,0 +1,7 @@
+<select #choice (change)="setFormat(choice.value)">
+    <option *ngFor="let x of optionArray" [value]="x.format">
+        {{x.title}}
+    </option>
+</select>
+
+<p>{{today | date : formatter}}</p>

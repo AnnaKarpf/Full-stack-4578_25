@@ -1,0 +1,73 @@
+<table border="1">
+    <tbody>
+        <tr>
+            <th>pipe</th>
+            <th>original value</th>
+            <th>result</th>
+        </tr>
+        <tr>
+            <td>uppercase</td>
+            <td>{{title}}</td>
+            <td>
+                <!--uppercase - Transforms text to all upper case-->
+                <p>{{ title | uppercase }}</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>lowercase</td>
+            <td>{{title}}</td>
+            <td>
+                <!--lowercase - Transforms text to all lower case-->
+                <p>{{ title | lowercase }}</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>titlecase</td>
+            <td>{{title}}</td>
+            <td>
+                <!--
+                    titlecase -Transforms text to title case. 
+                    Capitalizes the first letter of each word
+                -->
+                <p>{{ title | titlecase }}</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>currency</td>
+            <td>{{num}}</td>
+            <td>
+                <!-- currency - Transforms a number to a currency string, 
+                    formatted according to locale rules that determine group sizing and separator, 
+                    decimal-point character, and other locale-specific configurations.
+                -->
+                <p>{{num | currency}}</p>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>percent</td>
+            <td>{{num}}</td>
+            <td>
+                <!--percent - Transforms a number to a percentage string, 
+                    formatted according to locale rules that determine group sizing and separator, decimal-point character, 
+                    and other locale-specific configurations.
+                -->
+                <p>{{num | percent}}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>{{today}}</td>
+            <td>
+                <!--date - Formats a date value according to locale rules.-->
+                <p>{{today | date}}</p>
+                <p>{{today | date:'fullDate'}}</p>
+                <p>{{today | date:'MMMM'}}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>

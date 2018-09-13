@@ -1,0 +1,19 @@
+<form [formGroup]="myForm">
+
+    <div>
+        <label>userName:</label>
+        <input formControlName="userName" />
+        <p>{{myForm.controls.userName.errors?.err}}</p>
+    </div>
+
+
+    <div>
+        <label>userPassword:</label>
+        <input formControlName="userPassword" />
+        <p>{{myForm.controls.userPassword.errors?.err}}</p>
+    </div>
+
+
+    <input type="submit" value="Login" [disabled]="myForm.invalid" (click)="submitLogin()" />
+
+</form>
