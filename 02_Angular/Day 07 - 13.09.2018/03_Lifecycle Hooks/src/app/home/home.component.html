@@ -1,0 +1,10 @@
+<app-homeContent [msg]="toggleComponent"></app-homeContent>
+
+<hr/>
+
+<app-homeContent *ngIf="toggleComponent"></app-homeContent>
+
+
+<hr/>
+
+<button (click)="onToggle()">click to toggle component</button>
