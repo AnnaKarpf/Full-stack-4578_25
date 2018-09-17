@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function execFunc(f1, f2) {
+            if ((new Date()).getDay() != 1)
+                f1();
+            else
+                f2();
+        }
+
+
+        execFunc(
+            () => {console.log("Today is not Monday") },
+            () => {console.log("Today is Monday")}
+        );
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
