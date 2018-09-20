@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        var req1 = new XMLHttpRequest();
+
+        //************STEP 1 - AJAX - GET 250 COUNTRIES***********
+        req1.open("GET", "https://restcountries.eu/rest/v2/all?fields=name;borders");
+        req1.onreadystatechange = () => {
+            if (req1.readyState == 4) {
+
+                //************STEP 2 - SELECT A RANDOM COUNTRY, AND USE THE FIRST BORDER CODE***********
+                let countryArr = JSON.parse(req1.response);
+                let selectedBorder = "";
+                while (!selectedBorder) {
+                    let index = Math.floor(Math.random() * 249);
+                    if (countryArr[index].borders && countryArr[index].borders.length) {
+                        selectedBorder = countryArr[index].borders[0];
+                    }
+                }
+
+
+                //************STEP 3 - GET SELECTED COUNTRY NAME***********
+                var req2 = new XMLHttpRequest();
+
+                req2.open("GET", `https://restcountries.eu/rest/v2/alpha/${selectedBorder}?fields=name`);
+                req2.onreadystatechange = () => {
+                    if (req2.readyState == 4) {
+
+                        //************STEP 4 - PRINT THE SELECTED COUNTRY NAME***********
+                        console.log(req2.response);
+                    }
+
+                }
+                req2.send();
+            }
+
+        }
+        req1.send();
+
+    
+    </script>
+</head>
+
+<body></body>
+
+</html>

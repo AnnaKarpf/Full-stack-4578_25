@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        /*
+    fetch -> 
+    returns promise -> 
+    resolve returns a full response with a ReadableStream body -> 
+    call the response json function -> 
+    returns promise -> 
+    resolve returns the response body as json
+    */
+
+
+        //************STEP 1 - AJAX - GET 250 COUNTRIES***********
+        fetch("https://restcountries.eu/rest/v2/all?fields=name;borders")
+        .then(
+            (res)=> res.json()
+        )
+        //************STEP 2 - SELECT A RANDOM COUNTRY, AND USE THE FIRST BORDER CODE***********
+        .then(
+           (countryList)=>{
+                while (true) {
+                    let index = Math.floor(Math.random() * 249);
+                    if (countryList[index].borders && countryList[index].borders.length) {
+                       return countryList[index].borders[0];
+                    }
+                }
+           } 
+        )
+         //************STEP 3 - GET SELECTED COUNTRY NAME***********
+         .then(
+             (border)=>fetch(`https://restcountries.eu/rest/v2/alpha/${border}?fields=name`)
+         )
+        //************STEP 4 - PRINT THE SELECTED COUNTRY NAME***********
+         .then(
+            (res)=> res.json()
+        )
+        .then(
+            (res)=> console.log(res)
+        )
+    </script>
+</head>
+
+<body></body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+        async function getResult() {
+
+            //************STEP 1 - AJAX - GET 250 COUNTRIES***********
+            let res = await fetch("https://restcountries.eu/rest/v2/all?fields=name;borders");
+            let countryList = await res.json();
+
+            //************STEP 2 - SELECT A RANDOM COUNTRY, AND USE THE FIRST BORDER CODE***********
+            let border = "";
+            while (!border) {
+                let index = Math.floor(Math.random() * 249);
+                if (countryList[index].borders && countryList[index].borders.length) {
+                    border = countryList[index].borders[0];
+                }
+            }
+
+            //************STEP 3 - GET SELECTED COUNTRY NAME***********
+            let finalRes = await fetch(`https://restcountries.eu/rest/v2/alpha/${border}?fields=name`);
+
+            //************STEP 4 - PRINT THE SELECTED COUNTRY NAME***********
+            console.log(await finalRes.json());
+
+        }
+
+
+        getResult();
+    </script>
+</head>
+
+<body></body>
+
+</html>
