@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function returnProm(num1, num2) {
+    return new Promise(
+        (resolve, reject) => {
+            (num1 == num2) ? resolve("num1 is eq to num2"): reject("num1 is not eq to num2")
+        }
+    );
+}
+
+
+function sendToProm(){
+
+    document.body.setAttribute("disabled","disabled");
+
+    returnProm(
+        document.getElementById("num1").value, 
+        document.getElementById("num2").value
+    )
+    .then(
+        (msg)=>{
+            alert(msg);
+            document.body.removeAttribute("disabled");
+        }
+    )
+    .catch((err)=>{alert(err)});
+}
+    </script>
+</head>
+
+<body>
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <button id="btn" onclick="sendToProm()">submit num</button>
+</body>
+
+</html>

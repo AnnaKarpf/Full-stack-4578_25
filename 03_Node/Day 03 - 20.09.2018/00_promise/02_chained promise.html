@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function returnProm(num1, num2) {
+            return new Promise(
+                (resolve, reject) => {
+                    (num1 == num2) ? resolve("num1 is eq to num2"): reject("num1 is not eq to num2")
+                }
+            );
+        }
+
+        function loopResolve(){
+            let num1=prompt("enter first num");
+            let num2=prompt("enter first num");
+
+         returnProm(num1, num2)
+                .then(
+                    (msg)=>{
+                        alert(msg);
+                        loopResolve()
+                    }
+                )
+                .catch((err) =>alert(err));
+        }
+
+     
+     loopResolve();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
