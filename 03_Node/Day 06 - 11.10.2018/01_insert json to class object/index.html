@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        class Bike {
+            constructor() {
+                this.frame_colors;
+                this.thumb;
+                this.id;
+                this.title;
+                this.serial;
+                this.manufacturer_name;
+                this.frame_model;
+                this._year;
+            }
+
+             set year(value) {
+        let currentYear = new Date().getFullYear();
+        
+        if (value <= currentYear && value >= currentYear - 25)
+            this._year = value;
+        else
+            throw new Error(`Year must be between ${currentYear-25} to ${currentYear}`);
+    }
+
+
+    get year() {
+        return this._year;
+    }
+        }
+
+        let bikeJson = {
+            "frame_colors": ["Silver, gray or bare metal"],
+            "thumb": "https://bikebook.s3.amazonaws.com/uploads/Fr/2737/small_7300fx.jpg",
+            "id": 120343,
+            "title": "2004 Trek 7300 FX",
+            "serial": "tbi0407c25dl064",
+            "manufacturer_name": "Trek",
+            "frame_model": "7300 FX",
+            "year":2018
+        };
+
+        let bikeObject = new Bike();
+
+
+        for (key in bikeJson) {
+            bikeObject[key] = bikeJson[key];
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
