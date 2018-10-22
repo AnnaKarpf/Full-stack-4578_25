@@ -47,7 +47,7 @@ ng serve --open
 
 
 ### Users
-```json
+```
  {
         firstName: {
             type: String,
@@ -81,7 +81,7 @@ ng serve --open
 ```
 
 ### Books
-```json
+```
 {
     id: {
         type: String,
@@ -140,10 +140,10 @@ The server will contain the following controllers:
 for the following requests we will use this user info:
 ```json
 {
-        firstName:"Bob",
-        lastName: "Bryce",
-        userName: "BobB",
-        password: "abcde"
+        "firstName":"Bob",
+        "lastName": "Bryce",
+        "userName": "BobB",
+        "password": "abcde"
 }
 ```
 *Note:* the password must be sent to the server with a hash256 format
