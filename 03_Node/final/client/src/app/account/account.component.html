@@ -1,0 +1,38 @@
+
+<div *ngIf="user.userName!='Guest'">
+        <button (click)="logout()">Logout</button>
+</div>
+
+<div *ngIf="user.userName=='Guest'">
+<div [ngSwitch]="state">
+        <div *ngSwitchCase="'login'">    
+                <form [formGroup]="myForm">
+
+                        <div>
+                            <label>userName:</label>
+                            <input formControlName="userName" />
+                            <p>{{myForm.controls.userName.errors?.err}}</p>
+                        </div>
+                    
+                    
+                        <div>
+                            <label>userPassword:</label>
+                            <input formControlName="userPassword" />
+                            <p>{{myForm.controls.userPassword.errors?.err}}</p>
+                        </div>
+                    
+                    
+                        <input type="submit" value="Login" [disabled]="myForm.invalid" (click)="loginUser()" />
+                    
+                    </form>
+            
+                <button (click)="changeState('register')">Go to register</button>
+        </div>
+
+
+        <div *ngSwitchCase="'register'">             
+                <button (click)="registerUser()">registerUser</button> 
+                <button (click)="changeState('login')">Go to login</button>
+        </div>
+</div>
+</div>
