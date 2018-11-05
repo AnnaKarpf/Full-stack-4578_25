@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function getImages() {
+            fetch("/getImageLink")
+                .then(res => res.json())
+                .then(imageArray => {
+                    let str = "";
+                    for (item of imageArray) {
+                        str += `<h1>${item.name} is ${item.age} years old</h1>
+                                <img src="/${item.image}" style="width:200px"/><br>`
+                    }
+                    document.getElementById("myRes").innerHTML = str;
+                })
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Show image</h1>
+    <button onclick="getImages()">Clik me to view images</button>
+    <div id="myRes"></div>
+</body>
+
+</html>
